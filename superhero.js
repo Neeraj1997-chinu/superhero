@@ -17,7 +17,7 @@ function load() {
         $(
           `<li class='superhero' 
                 onclick='get_superhero(${i})' 
-                id='superhero_list${i}'><img src="${data.image.url}" style="height:40px; width:40px"> <p class="superherop">${data.name}</p></li>`,
+                id='superhero_list${i}'><img src="${data.image.url}" style="height:40px; width:40px"> <a id="superhero_name" title="Click to see full bio" href="superhero_bio.html?id=${i}" target="_blank" >${data.name}</a></p></li>`,
           {}
         ).appendTo("#superhero_list");
         $("<button></button>", {
