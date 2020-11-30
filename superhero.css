@@ -1,0 +1,26 @@
+.superhero {
+  display: flex;
+  border: 1px solid steelblue;
+  font-family: cursive;
+}
+.superhero img {
+  margin: auto;
+}
+.superhero button {
+  margin: auto;
+  background-color: rgb(55, 133, 223);
+  color: white;
+  height: 20px;
+  border: antiquewhite;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px grey;
+}
+#search_superhero {
+  width: 40%;
+}
+#superhero_list {
+  width: 40%;
+  height: 500px;
+  border: 2px solid black;
+  overflow-y: scroll;
+}
