@@ -28,6 +28,7 @@ function load() {
       },
     });
   }
+  document.getElementById("superhero_list").style.display = "none";
 }
 
 load();
@@ -46,4 +47,48 @@ function search() {
       superheroes[i].style.display = "none";
     }
   }
+
+  if (flter === "") {
+    document.getElementById("superhero_list").style.display = "none";
+  } else {
+    document.getElementById("superhero_list").style.display = "";
+  }
+}
+
+//add to fav function
+function Add_to_fav(i) {
+  $.ajax({
+    type: "GET",
+    url: "https://www.superheroapi.com/api.php/1230190087334410/" + i,
+    success: function (data) {
+      // var m=document.getElementById('superhero_image');
+      // m.setAttribute("src", data.image.url);
+
+      //add the list attribute into the fav superhero list
+      $("<li></li>", {
+        id: "superhero" + i,
+        class: "fav_superhero",
+      }).appendTo("#fav_super");
+      //get the image
+      $("<img>", {
+        src: data.image.url,
+        class: "fav_superhero_image",
+      }).appendTo("#superhero" + i);
+      //get the name
+      $(
+        `<h3><a id="superhero_name" title="Click to see full bio" href="superhero_bio.html?id=${i}" target="_blank" >${data.name}</a></h3>`,
+        {
+          text: ``,
+          // class:"fav_superhero_image",
+        }
+      ).appendTo("#superhero" + i);
+      //button to  remove the super hero from favorite
+      $("<button></button>", {
+        text: "remove",
+        onclick: `document.getElementById("superhero${i}").remove()`,
+        class: "button",
+        // class:"fav_superhero_image",
+      }).appendTo("#superhero" + i);
+    },
+  });
 }
