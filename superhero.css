@@ -1,3 +1,17 @@
+.header {
+  display: flex;
+  background-color: rgb(55, 133, 223);
+}
+.header h3 {
+  margin-left: 50px;
+  color: white;
+}
+.header input {
+  height: 20px;
+  margin: auto;
+  margin-left: 100px;
+}
+
 .superhero {
   display: flex;
   border: 1px solid steelblue;
@@ -27,8 +41,11 @@
   border: 2px solid black;
   overflow-y: scroll;
   position: absolute;
-  margin: 0px;
+
   background-color: white;
+  margin-top: 45px;
+  /* margin: auto; */
+  margin-left: 257px;
 }
 
 .fav_superhero {
